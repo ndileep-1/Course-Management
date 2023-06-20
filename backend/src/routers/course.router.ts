@@ -1,5 +1,6 @@
 import {Router} from 'express';
-import { courses, tags } from '../data';
+// import { courses } from '../data';
+const courses = require('../data');
 import asyncHandler from 'express-async-handler';
 import { CourseModel } from '../models/course.model';
 const router=Router();

@@ -1,9 +1,11 @@
 import {Router} from 'express';
-import { sample_users } from '../data';
+// import { sample_users } from '../data';
+const sample_users=require('../data')
 import asyncHandler from 'express-async-handler';
 import jwt from "jsonwebtoken";
 import { User, UserModel } from '../models/user.model';
-import { HTTP_BAD_REQUEST } from '../constants/Http_Status';
+// import { HTTP_BAD_REQUEST } from '../constants/Http_Status';
+const HTTP_BAD_REQUEST = require('../constants/Http_Status');
 import { CourseModel } from '../models/course.model';
 const router=Router();
 
