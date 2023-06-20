@@ -1,0 +1,64 @@
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div class="form-group row d-flex justify-content-center">
+        <label for="name" class="col-md-2 col-form-label">Full Name</label>
+        <div class="col-md-5"><input type="name" formControlName="name" id="name" class="form-control" placeholder="Enter Full Name"></div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.name.errors && isSubmitted">
+            <div *ngIf="fc.name.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.name.errors.pattern" class="text-danger">*only characters are allowed</div>
+            <div *ngIf="fc.name.errors.minlength" class="text-danger">*minimum length is 3</div>
+        </div>
+    </div>
+    <div class="form-group row d-flex justify-content-center">
+        <label for="password" class="col-md-2 col-form-label">Password</label>
+        <div class="col-md-5"><input type="password" formControlName="password" id="password" class="form-control" placeholder="Enter Password"></div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.password.errors && isSubmitted">
+            <div *ngIf="fc.password.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.password.errors.minlength" class="text-danger">*minimum length is 3</div>
+        </div>
+    </div>
+    <div class="form-group row d-flex justify-content-center">
+        <label for="confirmPassword" class="col-md-2 col-form-label">Confirm Password</label>
+        <div class="col-md-5"><input type="text" formControlName="confirmPassword" id="confirmPassword" class="form-control" placeholder="Re-Enter Password"></div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.confirmPassword.errors && isSubmitted">
+            <div *ngIf="fc.confirmPassword.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.confirmPassword.errors.confirmedValidator" class="text-danger">*password not match</div>
+        </div>
+    </div>
+    <div class="row form-group d-flex justify-content-center">
+        <label for="email" class="col-md-2 col-form-label">Email</label>
+        <div class="col-md-5">
+            <input type="email" formControlName="email" id="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.email.errors && isSubmitted">
+            <div *ngIf="fc.email.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.email.errors.email" class="text-danger">*Enter valid email address</div>
+        </div>
+    </div>
+    
+    <div class="form-group row d-flex justify-content-center">
+        <label for="phone" class="col-md-2 col-form-label">Phone</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="phone" id="phone" class="form-control" placeholder="Enter Phone Number">
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.phone.errors && isSubmitted">
+            <div *ngIf="fc.phone.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.phone.errors.minlength" class="text-danger">*minimum length is 10</div>
+        </div>
+    </div>
+    <div class="offset-md-2 px-3">
+        <div class="ms-4">Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{returnUrl: returnUrl}">
+            Login Here
+        </a>
+    </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-md-3 col-md-10">
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+        </div>
+    </div>
+
+    
+</form>

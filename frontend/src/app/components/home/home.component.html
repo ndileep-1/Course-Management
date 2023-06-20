@@ -1,0 +1,43 @@
+<!-- <div class="d-flex align-items-center" style="border: 1px solid green;">
+    <div class="flex-shrink-0">
+      <img src="../assets/logo.jpeg" alt="...">
+    </div>
+    <div class="flex-grow-1 ms-3">
+      This is some content from a media component. You can replace this with any content and adjust it as needed.
+    </div>
+  </div> 
+src="{{course.imageUrl}}"
+-->
+  <app-search></app-search>
+  <app-tags></app-tags>
+  <div class="d-flex justify-content-center">
+        <ul class="list-unstyled" >
+            <li *ngFor="let course of courses" class="d-flex align-items-center m-3 border-1" (click)="viewCourse(course.id)">
+                <div class="flex-shrink-0">
+                    <img class="d-flex img-thumbnail align-self-center" [src]="course.imageUrl"  alt="{{course.name}}" width="250" height="250">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <h2>{{course.name}}</h2>
+                    <h5>{{course.instructor}}</h5>
+                    <p class="mb-0">{{course.description}}</p>
+                    <div class="d-flex mt-2">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item border-0 mx-2 p-0 align-items-center" *ngFor="let tag of course.tags">
+                                <span class="badge bg-secondary">{{tag}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                    
+            </li>
+        </ul>
+      
+    </div>
+
+                    <!-- <a routerLink="course/{{course.id}}" class="d-flex align-items-center m-3 border-1" style="text-decoration: none; color: black;"> -->
+                <!-- </a> -->
+
+<!-- 
+
+    <button *ngIf="!course.isenrolled" class="ms-auto btn btn-primary rounded-pill px-4" (click)="enroll(course.id)">Enroll</button>
+    <button *ngIf="course.isenrolled" class="ms-auto btn btn-secondary rounded-pill px-3" (click)="enroll(course.id)" disabled>Enrolled</button> -->

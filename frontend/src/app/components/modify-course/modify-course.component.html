@@ -1,0 +1,70 @@
+<form  [formGroup]="myform">
+    <div class="form-group row d-flex justify-content-center">
+        <label for="name" class="col-md-2 col-form-label">Course Name</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="name" id="name" class="form-control" placeholder="Enter Course Name" >
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.name.errors && isSubmitted">
+            <div *ngIf="fc.name.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.name.errors.pattern" class="text-danger">*only characters are allowed</div>
+        </div>
+    </div>
+    <div class="form-group row d-flex justify-content-center">
+        <label for="instructor" class="col-md-2 col-form-label">Instructor</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="instructor" id="instructor" class="form-control" placeholder="Enter Instructor Name">
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.instructor.errors && isSubmitted">
+            <div *ngIf="fc.instructor.errors.required" class="text-danger">*Should not be empty</div>
+            <div *ngIf="fc.instructor.errors.pattern" class="text-danger">*only characters and . are allowed</div>
+        </div>
+    </div>
+    <div class="form-group row d-flex justify-content-center">
+        <label for="tags" class="col-md-2 col-form-label">Course Tags</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="tags" id="tags" class="form-control" placeholder="Enter Course Tags">
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.tags.errors && isSubmitted">
+            <div *ngIf="fc.tags.errors.required" class="text-danger">*Should not be empty</div>
+           
+        </div>
+    </div>
+    <div class="row form-group d-flex justify-content-center">
+        <label for="description" class="col-md-2 col-form-label">Description</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="description" id="description" class="form-control" placeholder="Enter COurse Description">
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.description.errors && isSubmitted">
+            <div *ngIf="fc.description.errors.required" class="text-danger">*Should not be empty</div>
+        </div>
+    </div>
+    
+    <div class="form-group row d-flex justify-content-center">
+        <label for="topics" class="col-md-2 col-form-label">Course Topics</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="topics" id="topics" class="form-control" placeholder="Enter Course Topics">
+        </div>
+        <div class="offset-md-2 col-md-5" *ngIf="fc.topics.errors && isSubmitted">
+            <div *ngIf="fc.topics.errors.required" class="text-danger">*Should not be empty</div>
+        </div>
+    </div>
+    <div class="form-group row d-flex justify-content-center">
+        <label for="imageurl" class="col-md-2 col-form-label">Course Image Link</label>
+        <div class="col-md-5">
+            <input type="text" formControlName="imageurl" id="imageurl" class="form-control" placeholder="Enter Image Url">
+        </div>
+        <!-- <div class="offset-md-2 col-md-5" *ngIf="fc.imageurl.errors && isSubmitted">
+            <div *ngIf="fc.imageurl.errors.required" class="text-danger">*Should not be empty</div>
+        </div> -->
+    </div>
+    <div class="form-group row">
+        <div class="offset-md-3 col-md-10">
+            <button class="btn btn-secondary" (click)="editCourse()">Edit</button>
+            <button  class="offset-2 btn btn-danger" (click)="removeCourse()">Delete</button>
+        </div>
+        <!-- <div class="offset-md-3 col-md-10">
+            
+        </div> -->
+    </div>
+
+</form>

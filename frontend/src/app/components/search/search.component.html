@@ -1,0 +1,4 @@
+<div class="d-flex justify-content-center mt-3">
+    <input #s type="text" class="form-control ms-5 me-3 w-50" placeholder="search course" (keyup.enter)="search(s.value)"/>
+    <button (click)="search(s.value)" class="btn btn-warning">Search</button>
+</div>

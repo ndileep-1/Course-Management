@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #6610f2;">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="#" class="navbar-brand mr-auto nav-item"><img src="../assets/dvk.jpg" style="width: 50px; height: 50px;"
+                alt="logo"></a>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" *ngIf="isAdmin">
+                    <a class="nav-link" routerLink="/admin/searchcourse"><span class="fa fa-home fa-lg"></span>
+                    Courses</a>
+                </li>
+                <li class="nav-item active" *ngIf="isAdmin">
+                    <a class="nav-link" routerLink="admin/addcourse"><span class="fa fa-plus fa-lg"></span>
+                    Add Course</a>
+                </li>
+                <li class="nav-item active" *ngIf="!isAdmin"><a class="nav-link" routerLink="/"><span class="fa fa-home fa-lg"></span>
+                        Home</a></li>
+                <li class="nav-item" *ngIf="!isAdmin"><a routerLink="courses/enrolled" class="nav-link"><span class="fa fa-info fa-lg"></span>
+                        Enrolled Courses</a></li>
+                <li class="nav-item" *ngIf="!isAdmin"><a routerLink="courses/completed" class="nav-link"><span class="fa fa-check fa-lg"></span> Completed Courses</a>
+                </li>
+                <!-- <li class="nav-item" *ngIf="!isAdmin"><a href="contactus.html" class="nav-link"><span
+                            class="fa fa-address-card fa-lg"></span> Contact</a></li> -->
+                              
+            </ul>
+        </div>
+        <!-- <span class="navbar-text"> -->
+            <a class="text-white" style="cursor: pointer;" id="loginbutton" *ngIf="user.name" (click)="logout()">
+                <span class="fa fa-user"></span>
+                {{user.name}}
+            </a>
+            <a class="text-white" id="loginbutton" routerLink="/login" *ngIf="!user.name">
+            <span class="ms-4 fa fa-sign-in"></span> Login</a>
+
+        <!-- </span> -->
+    </div>
+</nav>

@@ -1,0 +1,8 @@
+<ul *ngIf="tags" class="mt-3 ms-3">
+    <li class="d-inline border-0 mx-2 p-0" *ngFor="let tag of tags" (click)="search(tag.name)">
+        <span class="badge bg-info" style="cursor: pointer;">
+            {{tag.name}}
+            <span class="ps-2 badge circle bg-light text-dark">{{tag.count}}</span>
+        </span>
+    </li>
+</ul>

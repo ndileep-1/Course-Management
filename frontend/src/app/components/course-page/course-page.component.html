@@ -1,0 +1,73 @@
+<div class="container">
+  <!-- <div class="row my-5 d-flex justify-content-center">
+    <img [src]="imageurl" class="col-6" [alt]="name">
+  </div> -->
+  <div class="row  d-flex justify-content-center my-3">
+    <div class="col-12 col-md-6 my-5 my-md-auto">
+      <div class="row d-flex justify-content-center">
+        <img [src]="imageurl" class="col-6 mb-4" [alt]="name">
+      </div>
+      <div class="row">
+        <h4 class="col-6 d-md-flex flex-row-reverse">Course Name: </h4>
+        <p class="col-6">{{name}}</p>
+      </div>
+      <div class="row">
+        <h4 class="col-6 d-md-flex flex-row-reverse">Course Instructor: </h4>
+        <p class="col-6">{{instructor}}</p>
+      </div>
+      <div class="row" *ngIf="!enrolled">
+        <h4 class="col-6 d-md-flex flex-row-reverse">Instructor Number: </h4>
+        <p class="col-6">1234567890</p>
+      </div>
+      <div class="row" *ngIf="enrolled">
+        <h4 class="col-6 d-md-flex flex-row-reverse">Instructor Number: </h4>
+        <p class="col-6">1098765432</p>
+      </div>
+      <div class="row">
+        <h4 class="col-6 d-md-flex flex-row-reverse">Description: </h4>
+        <p class="col-6">{{description}}</p>
+      </div>
+      <!-- <div class="row">
+        <h4 class="col-6">Description: </h4>
+        <p class="col-6">{{description}}</p>
+      </div> -->
+    </div>
+    <div class="col-12 col-md-6">
+      <h4>Topics to be learn...</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let topic of topics">{{topic}}</li>
+        <li class="list-group-item">
+          <button *ngIf="enrolled && !completed" class="offset-2 btn btn-secondary rounded-pill" (click)="unenroll(course._id)">Unenroll</button>
+          <button *ngIf="enrolled && !completed" class="offset-2 btn btn-success rounded-pill" (click)="complete(course._id)">Mark As Complete</button>
+          <button *ngIf="!enrolled" class="ms-auto btn btn-primary rounded-pill px-4" (click)="enroll(course._id)">Enroll</button>
+        </li>  
+      </ul>
+      <!-- <div *ngIf="!enrolled">
+          <h2 >Enroll to view the course contents...</h2>
+        <button class="ms-auto btn btn-primary rounded-pill px-4" (click)="enroll(course._id)">Enroll</button>
+      </div> -->
+      </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+        <img [src]="imageurl" class="card-img-top" [alt]="name">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let tag of tags">{{tag}}</li>
+        </ul>
+         <div class="card-body">
+          <button *ngIf="!enrolled" class="ms-auto btn btn-primary rounded-pill px-4" (click)="enroll(course._id)">Enroll</button>
+          <button *ngIf="enrolled && !completed" class="ms-auto btn btn-primary rounded-pill px-4" (click)="unenroll(course._id)">Unenroll</button>
+          <button *ngIf="enrolled && !completed" class="ms-auto btn btn-secondary rounded-pill px-3" (click)="complete(course._id)">Mark As Complete</button>
+         </div>
+        
+      </div>
+</div> -->
+
