@@ -1,11 +1,11 @@
-import { connect, ConnectOptions } from "mongoose";
-
-export const dbConnect = ()=>{
-    connect(process.env.MONGO_URI!,{
-       // useNewUrlParser: true,
-       // iseUnifiedToplogy: true
-    } as ConnectOptions ).then(
-        ()=>console.log("connect successfully"),
-        (error)=>console.log(error)
-    )
-}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.dbConnect = void 0;
+var mongoose_1 = require("mongoose");
+var dbConnect = function () {
+    (0, mongoose_1.connect)('mongodb+srv://ndvkrishna9:TyFMOfMG2hkJAbVj@cluster0.odhuwov.mongodb.net/c_application_db?retryWrites=true&w=majority', {
+    // useNewUrlParser: true,
+    // iseUnifiedToplogy: true
+    }).then(function () { return console.log("connect successfully"); }, function (error) { return console.log(error); });
+};
+exports.dbConnect = dbConnect;
