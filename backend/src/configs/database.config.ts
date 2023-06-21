@@ -1,7 +1,7 @@
 import { connect, ConnectOptions } from "mongoose";
 
 export const dbConnect = ()=>{
-    connect(process.env.MONGO_URI!,{
+    connect('mongodb+srv://ndvkrishna9:TyFMOfMG2hkJAbVj@cluster0.odhuwov.mongodb.net/c_application_db?retryWrites=true&w=majority',{
        // useNewUrlParser: true,
        // iseUnifiedToplogy: true
     } as ConnectOptions ).then(
